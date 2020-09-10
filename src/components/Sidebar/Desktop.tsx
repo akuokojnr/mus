@@ -59,16 +59,16 @@ const Desktop: React.FC = () => {
               {items.length > 0 && (
                 <Items>
                   {items.map((item) => (
-                    <>
+                    <React.Fragment key={uuid()}>
                       {delve(item, "label") && delve(item, "icon") ? (
-                        <li key={uuid()}>
+                        <li>
                           {item.icon()}
                           <Label>{item.label}</Label>
                         </li>
                       ) : (
-                        <li key={uuid()}>{item}</li>
+                        <li>{item}</li>
                       )}
-                    </>
+                    </React.Fragment>
                   ))}
                 </Items>
               )}

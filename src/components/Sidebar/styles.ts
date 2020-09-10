@@ -64,6 +64,8 @@ export const Items = styled.ul`
     font-family: "Cabin";
     cursor: pointer;
     border-left: 0.3rem solid transparent;
+    display: flex;
+    align-items: center;
 
     &:hover {
       background: ${({ theme }) => theme.gradients.navHighlight};
