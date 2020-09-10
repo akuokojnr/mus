@@ -1,14 +1,11 @@
 import * as React from "react";
 import { v4 as uuid } from "uuid";
-import delve from "dlv";
 
 import { MobileNav, MobileNavInner } from "./styles";
 
 import { Home as HomeIcon } from "@styled-icons/heroicons-solid/Home";
 import { Search as SearchIcon } from "@styled-icons/evaicons-solid/Search";
-import { AccessTime as TimeIcon } from "@styled-icons/material-rounded/AccessTime";
 import { FavoriteBorder as FavoriteIcon } from "@styled-icons/material-rounded/FavoriteBorder";
-import { AddCircle as AddIcon } from "@styled-icons/ionicons-outline/AddCircle";
 import { Playlist as PlaylistIcon } from "@styled-icons/boxicons-solid/Playlist";
 
 const data = [
