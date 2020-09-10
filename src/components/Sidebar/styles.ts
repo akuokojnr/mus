@@ -8,6 +8,7 @@ const PLAYER_HEIGHT = 6;
 export const DesktopNav = styled.nav`
   height: calc(100vh - ${PLAYER_HEIGHT}rem);
   max-width: 350px;
+  width: 100%;
   overflow: hidden;
   display: none;
 
@@ -110,6 +111,10 @@ export const MobileNav = styled.nav`
   background: ${({ theme }) => theme.colors.black};
   padding: 1rem 1.5rem;
   display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   ${media.lg`
     display: none;
