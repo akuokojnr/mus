@@ -12,7 +12,7 @@ const options = {
   scaleRatio: 2.15,
   overrideStyles: () => {
     return {
-      body: { color: "#000000" },
+      body: { color: "#ffffff" },
       h1: { fontSize: "54px", lineHeight: "61px" },
       h2: { fontSize: "42px", lineHeight: "48px" },
       h3: { fontSize: "30px", lineHeight: "40px" },

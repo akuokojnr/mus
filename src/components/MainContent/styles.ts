@@ -14,3 +14,11 @@ export const Section = styled.section`
     height: calc(100vh - ${PLAYER_HEIGHT}rem);
   `};
 `;
+
+export const Content = styled.div`
+  padding: 2rem 1.5rem;
+
+  ${media.lg`
+    padding: 3rem;
+  `};
+`;
