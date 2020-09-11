@@ -44,7 +44,7 @@ export const Category = styled.div`
 export const Title = styled.p`
   color: ${({ theme }) => theme.colors.darkOrange};
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   margin-left: 3rem;
   font-family: "Cabin";
@@ -57,7 +57,7 @@ export const Items = styled.ul`
     list-style-type: none;
     margin-top: 0.2rem;
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     color: ${({ theme }) => theme.colors.white};
     padding: 0.8rem 3rem;
@@ -87,7 +87,7 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.colors.green};
   font-size: 0.8rem;
   font-family: "Cabin";
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.6rem;
   width: max-content;
   text-transform: uppercase;
