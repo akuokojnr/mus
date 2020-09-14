@@ -9,8 +9,9 @@ import {
 
 import PlaybackControl from "./PlaybackControl";
 import NextPrevious from "./NextPrevious";
+import Progress from "./Progress";
 
-import { Wrapper, Inner } from "./styles";
+import { Wrapper, Inner, ProgressWrapper } from "./styles";
 
 interface PlayerProps {
   audioSrc: string;
@@ -19,6 +20,7 @@ interface PlayerProps {
 const Player: React.FC<PlayerProps> = ({ audioSrc }) => {
   const player = React.useRef<HTMLVimePlayerElement>(null);
   const [paused, setPaused] = React.useState(true);
+  const [progress, setProgress] = React.useState<number>(0);
 
   const onClick = () => {
     setPaused(!paused);
@@ -34,13 +36,34 @@ const Player: React.FC<PlayerProps> = ({ audioSrc }) => {
     }
   };
 
+  const onTimeUpdate = (event: CustomEvent<number>) => {
+    if (player.current) {
+      const currentTime = event.detail;
+      const totalTime = player.current.duration;
+      let progress;
+
+      if (currentTime === 0) {
+        progress = 0;
+      } else {
+        const currentProgress = ((currentTime / totalTime) * 100).toFixed(2);
+        progress = Number(currentProgress);
+      }
+
+      setProgress(progress);
+    }
+  };
+
   React.useEffect(() => {
     handlePlay();
   }, [paused]);
 
   return (
     <Wrapper>
-      <VimePlayer controls={false} ref={player}>
+      <VimePlayer
+        controls={false}
+        ref={player}
+        onVCurrentTimeChange={onTimeUpdate}
+      >
         <VimeAudio>
           <source data-src={audioSrc} type="audio/mp3" />
         </VimeAudio>
@@ -50,10 +73,11 @@ const Player: React.FC<PlayerProps> = ({ audioSrc }) => {
             <PlaybackControl status={paused} handleClick={onClick} />
             <NextPrevious type="right" />
           </VimeControls>
-          <div>
+          <ProgressWrapper>
             <VimeCurrentTime />
+            <Progress progress={progress} />
             <VimeEndTime />
-          </div>
+          </ProgressWrapper>
         </Inner>
       </VimePlayer>
     </Wrapper>

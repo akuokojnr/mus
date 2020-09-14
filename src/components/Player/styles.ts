@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import media from "utils/media";
+
 const PLAYER_HEIGHT = 6;
 
 export const Wrapper = styled.div`
@@ -21,4 +23,13 @@ export const Inner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+export const ProgressWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
+  ${media.lg`
+    min-width: 840px;
+  `};
 `;
