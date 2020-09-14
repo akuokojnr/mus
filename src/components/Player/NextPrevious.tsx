@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { ChevronLeft as LeftIcon } from "@styled-icons/heroicons-outline/ChevronLeft";
 import { ChevronRight as RightIcon } from "@styled-icons/heroicons-outline/ChevronRight";
 
+import media from "utils/media";
+
 interface NextPreviousProps {
   type: "left" | "right";
 }
@@ -27,5 +29,13 @@ const Wrapper = styled.button`
 
   &:hover {
     color: ${({ theme }) => theme.colors.green};
+  }
+
+  svg {
+    transform: scale(0.8);
+
+    ${media.lg`
+      transform: scale(1);
+    `};
   }
 `;

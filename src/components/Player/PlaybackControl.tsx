@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { Play as PlayIcon } from "@styled-icons/ionicons-outline/Play";
 import { Pause as PauseIcon } from "@styled-icons/bootstrap/Pause";
 
+import media from "utils/media";
+
 interface PlayProps {
   status: boolean;
   handleClick: () => void;
@@ -23,10 +25,23 @@ const Wrapper = styled.button`
   border-radius: 50%;
   border: none;
   outline: none;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  ${media.lg`
+    height: 2.5rem;
+    width: 2.5rem;
+  `};
+
+  svg {
+    transform: scale(0.8);
+
+    ${media.lg`
+      transform: scale(1);
+    `};
+  }
 `;

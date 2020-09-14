@@ -1,6 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
 
+import media from "utils/media";
+
 interface ProgressProps {
   progress: number;
 }
@@ -18,11 +20,16 @@ export default Progress;
 const Wrapper = styled.div`
   position: relative;
   background: ${({ theme }) => theme.colors.gray2};
-  height: 0.3rem;
+  height: 0.15rem;
   border-radius: 0.5rem;
   overflow: hidden;
   width: 100%;
-  margin: 0 1.6rem;
+  margin: 0 1.1rem;
+
+  ${media.lg`
+    height: 0.3rem;
+    margin: 0 1.6rem;
+  `};
 `;
 
 const Track = styled.div`
