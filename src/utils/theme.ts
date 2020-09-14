@@ -5,6 +5,8 @@ export default {
     white: "#FFFFFF",
     darkOrange: "#E1456A",
     green: "#3CBB6D",
+    gray: "#999FB1",
+    gray2: "#E9E9E9",
   },
 
   gradients: {
