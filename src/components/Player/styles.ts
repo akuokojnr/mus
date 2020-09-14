@@ -31,17 +31,20 @@ export const Inner = styled.div`
 
   ${media.lg`
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   `};
 
   vime-controls {
     justify-content: center !important;
     margin-top: 0.5rem;
+    min-width: 8rem;
 
     ${media.lg`
       justify-content: start !important;
       margin-top: 0;
+      width: max-content !important;
+      margin-right: 3rem;
     `};
   }
 `;
@@ -52,6 +55,6 @@ export const ProgressWrapper = styled.div`
   width: 100%;
 
   ${media.lg`
-    min-width: 700px;
+    max-width: 800px;
   `};
 `;

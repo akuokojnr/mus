@@ -10,6 +10,7 @@ import {
 import PlaybackControl from "./PlaybackControl";
 import NextPrevious from "./NextPrevious";
 import Progress from "./Progress";
+import ArtistProfile from "./ArtistProfile";
 
 import { Wrapper, Inner, ProgressWrapper } from "./styles";
 
@@ -68,6 +69,11 @@ const Player: React.FC<PlayerProps> = ({ audioSrc }) => {
           <source data-src={audioSrc} type="audio/mp3" />
         </VimeAudio>
         <Inner>
+          <ArtistProfile
+            songTitle="Dust in the wind"
+            artist="Kansas"
+            image="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+          />
           <VimeControls>
             <NextPrevious type="left" />
             <PlaybackControl status={paused} handleClick={onClick} />
